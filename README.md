@@ -1,6 +1,9 @@
 # Hotel-shop
 First of all you need db, create VM with Postgres(DDL you can find in analysis folder). Next map your IP in DataConfig.java, find in DataConfig constructor resultMap and put in your IP and DB IP. Before start app, your db must contain all tables and views. I delete all data from db and that mean you must fill it, sorry but i can't retain production information. 
 
+<br/><br/>![helper](https://github.com/gleb619/hotel_shop/raw/master/hero.jpg)
+<br/><br/>![helper](https://github.com/gleb619/hotel_shop/raw/master/hero2.jpg)
+<br/><br/>
 Fill tables:<br/>
   curr_currency<br/>
   <br/>
