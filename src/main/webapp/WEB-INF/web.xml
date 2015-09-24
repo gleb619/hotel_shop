@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="MyTestApp" version="3.0">
+  <display-name>shop-server</display-name>
+  <welcome-file-list>
+    <welcome-file>login</welcome-file>
+    <welcome-file>index</welcome-file>
+    <welcome-file>welcome</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <exception-type>404</exception-type>
+    <location>/404</location>
+  </error-page>
+  <error-page>
+    <exception-type>403</exception-type>
+    <location>/403</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error</location>
+  </error-page>
+  <mime-mapping>
+    <extension>appcache</extension>
+    <mime-type>text/cache-manifest</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>js</extension>
+    <mime-type>application/javascript</mime-type>
+  </mime-mapping>
+</web-app>

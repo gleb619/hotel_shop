@@ -1,0 +1,19 @@
+{
+  "name": "angular-combobox",
+  "description": "ComboBox Directive for Angular",
+  "version": "1.2.1",
+  "main": "angular-combobox.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:justinwinslow/angular-combobox.git"
+  },
+  "authors": [
+    "Justin Winslow <justin@jwin.me> (http://jwin.me)"
+  ],
+  "dependencies": {
+    "jquery": ">=2.1.0",
+    "lodash": ">=2.4.0",
+    "angular": ">=1.2.0",
+    "normalize-css": "latest"
+  }
+}

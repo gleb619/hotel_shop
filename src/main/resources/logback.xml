@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date %-5level [%logger{36}]- %msg%n</pattern>
+		</encoder>
+		<!-- <layout class="ch.qos.logback.classic.PatternLayout"> <Pattern> %d{HH:mm:ss.SSS} 
+			%-5level %logger{36} - %msg%n </Pattern> </layout> -->
+	</appender>
+
+	<!-- %d{yyyy-MM-dd} -->
+
+	<!-- <appender name="FILE" class="ch.qos.logback.core.FileAppender"> -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- <file>D:\\LOGS\\.log</file> -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+	      <level>INFO</level>
+	      <onMatch>ACCEPT</onMatch>
+	      <!-- <onMismatch>NEUTRAL</onMismatch> -->
+	      <onMismatch>DENY</onMismatch>
+	    </filter>
+
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>D:\\LOGS\\TOURISM\\%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- <fileNamePattern>/var/log/tourism/%d{yyyy-MM-dd}.log</fileNamePattern> -->
+			
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+	      <maxFileSize>5MB</maxFileSize>
+	    </triggeringPolicy>
+		
+		<encoder>
+			<!-- %date{ISO88595} -->
+			<!-- %date -->
+			<!-- '\t|\n|\[|\]|\{|\}|"' -->
+			<!-- '\t|\n|"' -->
+			<pattern>, { "level":"%-5level", "time":"%date", "thread":"%thread", "logger":"%logger", "method":"%method", "msg":"%replace(%replace(%msg){'\t|\n|"', ' '}){'\\', '/'}"}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <appender name="defaultLog" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
+		See also http://logback.qos.ch/manual/appenders.html#RollingFileAppender 
+		<file>D:\LOGS\test.log</file> <encoder> <pattern>%d{dd MMM yyyy HH:mm:ss.SSS} 
+		[%t] %-5p %x %F:%L - %m</pattern> </encoder> <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy" 
+		/> <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> 
+		<MaxFileSize>50000KB</MaxFileSize> </triggeringPolicy> </appender> -->
+
+	<!-- DEBUG -->
+	<!-- INFO -->
+	<root level="INFO">
+	<!-- <root level="DEBUG"> -->
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

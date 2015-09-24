@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>simple-gallery row-layout example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../../jqueryui-widget.min.js"></script>
+    <script src="../../simple-gallery.min.js"></script>
+    <style>
+        #images {
+            text-align:center;
+        }
+        
+        #images img {
+            width:200px;
+            padding:0;
+            transition:width 500ms;
+            -webkit-transition:width 500ms;
+            -moz-transition:width 500ms;
+            -ms-transition:width 500ms;
+            -o-transition:width 500ms;
+        }
+        
+        #full {
+            margin:10px auto;
+            width:720px;
+            height:480px;
+        }
+        
+        #images img.selected {
+            width:250px;
+            padding:0 5px;
+        }
+        
+        #caption {
+            clear:left;
+        }
+    </style>
+</head>
+<body>
+    <div id="images">
+        <img src="../images/img1.jpg" title="image 1" />
+        <img src="../images/img2.jpg" title="image 2" />
+        <img src="../images/img3.jpg" title="image 3" />
+        <img src="../images/img1.jpg" title="image 4" />
+        <img src="../images/img2.jpg" title="image 5" />
+        <img src="../images/img3.jpg" title="image 6" />
+        <img src="../images/img1.jpg" title="image 7" />
+        <img src="../images/img2.jpg" title="image 8" />
+        <img src="../images/img3.jpg" title="image 9" />
+    </div>
+    <div id="full"></div>
+    <p id="caption"></p>
+    
+    <script>
+        $('#full').gallery({
+            source: "#images img",
+            showCaptions: true,
+            captionTarget: "#caption"
+        });
+        
+        $("#full").on({
+            mouseenter: function() {
+                $("#full").gallery("stopAnimation");
+            },
+            mouseleave: function() {
+                $("#full").gallery("resumeAnimation");
+            }
+        });
+        
+        $("#full").on({
+            galleryimageload: function() {
+                console.log("new image loaded");
+            },
+            galleryclick: function() {
+                console.log("gallery source image clicked");
+            },
+            galleryanimationstop: function() {
+                console.log("gallery animation stopped");
+            },
+            galleryanimationresume: function() {
+                console.log("gallery animation resumed");
+            }
+        });
+    </script>
+</body>
+</html>

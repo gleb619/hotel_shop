@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.msg {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.form-log-in {
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 30px;
+}
+
+.top-margin {
+	margin-top: 10px;
+}
+
+.padding-left {
+	padding-left: 20px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media {
+	img {
+		width: auto; /* for ie 8 */
+	}
+}
+
+div.centre {
+	width: 330px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

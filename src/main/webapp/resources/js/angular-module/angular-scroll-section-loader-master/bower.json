@@ -1,0 +1,26 @@
+{
+  "name": "angular-scroll-section-loader",
+  "version": "0.1.1",
+  "homepage": "https://github.com/dbtek/angular-scroll-section-loader",
+  "authors": [
+    "İsmail Demirbilek <ce.demirbilek@gmail.com>"
+  ],
+  "description": "Auto section loader with scroll event for Angular JS.",
+  "main": "scroll-section-loader.js",
+  "keywords": [
+    "angular",
+    "auto",
+    "scroll",
+    "loader",
+    "section",
+    "partials"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

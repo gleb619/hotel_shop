@@ -1,0 +1,161 @@
+@CHARSET "UTF-8";
+
+/* 	
+.sector .ng-hide , .sector .ng-show  {
+	-webkit-animation: zoomInUp 1s;
+	-moz-animation: zoomInUp 1s;
+	-o-animation: zoomInUp 1s;
+	animation: zoomInUp 1s;
+}
+*/
+/* 
+.sector .ng-enter  {
+	-webkit-animation: fadeInRight 0.5s;
+    animation: fadeInRight 0.5s;
+}
+ */
+.map-holder .ng-hide-remove {
+    -webkit-animation: flipInY 0.3s;
+    animation: flipInY 0.3s;
+}
+ 
+.map-holder .ng-hide-add {
+    -webkit-animation: flipOutY 0.4s;
+    animation: flipOutY 0.4s;
+    /* display: block !important; */
+}
+
+.animated-item .ng-hide-remove {
+    -webkit-animation: bounceIn 0.3s;
+    animation: bounceIn 0.3s;
+}
+ 
+.animated-item .ng-hide-add {
+    -webkit-animation: bounceOut 0.4s;
+    animation: bounceOut 0.4s;
+    /* display: block !important; */
+}
+
+/* 
+.sector .ng-hide {
+	-webkit-animation: zoomOutDown 1s;
+	-moz-animation: zoomOutDown 1s;
+	-o-animation: zoomOutDown 1s;
+	animation: zoomOutDown 1s;
+}
+ */
+ /* 
+.sector .ng-hide {
+	-webkit-animation: fadeOut 1s;
+	-moz-animation: fadeOut 1s;
+	-o-animation: fadeOut 1s;
+	animation: fadeOut 1s;
+}
+ */
+
+/* #--------------------------------------- */
+
+
+.repeat-animation.ng-enter,
+.repeat-animation.ng-leave,
+.repeat-animation.ng-move {
+  -webkit-transition: all linear 1s;
+  -moz-transition: all linear 1s;
+  -o-transition: all linear 1s;
+  transition: all linear 1s;
+     
+  position:relative;
+  left:5px;
+}
+.repeat-animation.ng-enter {
+  opacity: 0;
+}
+.repeat-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.repeat-animation.ng-leave {
+  opacity: 1;
+}
+.repeat-animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.repeat-animation.ng-move {
+  left:2px;
+  opacity: 0.5;
+}
+.repeat-animation.ng-move.ng-move-active {
+  left:0;
+  opacity: 1;
+}
+
+/* #--------------------------------------- */
+
+
+.example-animate-container {
+    background: #ececec;
+    list-style:none;
+    margin:0;
+    padding:0 10px;
+}
+
+.animate-repeat {
+    line-height:40px;
+    list-style:none;
+    /*box-sizing:border-box;*/
+    border-bottom: 1px solid white;
+    -webkit-transition: 1s linear all;
+    transition: 1s linear all;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave {
+    -webkit-transition:all linear 10ms;
+    transition:all linear 10ms;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    opacity:0;
+    max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+    max-height:40px;
+}
+
+/**
+ * Stagger Leave (hide) animation
+ */
+.animate-repeat.ng-leave-stagger {
+    /* this will have a 100ms delay between each successive leave animation */
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+
+    /* in case the stagger doesn't work then these two values
+     must be set to 0 to avoid an accidental CSS inheritance */
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+/**
+ * Stagger ENTER ANIMATION
+ */
+.animate-repeat.ng-enter-stagger {
+    /* this will have a 100ms delay between each successive enter animation */
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+
+    /* in case the stagger doesn't work then these two values
+     must be set to 0 to avoid an accidental CSS inheritance */
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}

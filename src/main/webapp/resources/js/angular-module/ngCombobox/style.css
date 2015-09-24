@@ -1,0 +1,60 @@
+combobox-holder * {
+	box-sizing: inherit;
+}
+
+.combobox {
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.combobox .combobox-input {
+	margin: 0;
+}
+
+.combobox .open {
+	background: #eee;
+	border: 1px solid #ccc;
+	border-left: none;
+	font-size: 0;
+	height: 24px;
+	width: 24px;
+	line-height: 24px;
+	padding: 0 3px;
+	display: inline-block;
+	text-align: center;
+}
+
+.combobox .combobox-options {
+	position: absolute;
+	top: 100%;
+	z-index: 9999;
+	min-width: 100%;
+	padding: 0;
+	margin: -1px 0 0;
+	border: 1px solid #ccc;
+	background: #fff;
+	list-style-type: none;
+	max-height: 240px;
+	overflow: auto;
+}
+
+.combobox .combobox-options.flip {
+	top: auto;
+	bottom: 100%;
+}
+
+.combobox .combobox-options .combobox-option {
+	border-bottom: 1px solid #eee;
+	margin: 0;
+	padding: 3px 6px;
+	cursor: default;
+}
+
+.combobox .combobox-options .combobox-option:hover, .combobox .combobox-options .combobox-option.combobox-hilighted {
+	background-color: #f5f5f5;
+}
+
+.combobox .combobox-options .combobox-option:last-child {
+	border-bottom: none;
+}
